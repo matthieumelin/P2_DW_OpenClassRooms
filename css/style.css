@@ -6,3 +6,398 @@
     html {
         scroll-behavior: smooth;
     }
+    
+     :root {
+        --primary-color: #0065FC;
+        --primary-hover-color: #035ce2;
+        --bg-color: #F2F2F2;
+    }
+    /* Works on Firefox */
+    
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-color);
+    }
+    /* Works on Chrome, Edge, and Safari */
+    
+    *::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    *::-webkit-scrollbar-track {
+        background: var(--bg-color);
+    }
+    
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--primary-color);
+        border-radius: 20px;
+        border: 3px solid var(--bg-color);
+    }
+    /* Navbar */
+    
+    .header {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .header_navbar {
+        display: flex;
+        align-items: center;
+    }
+    
+    .header_navbar_brand_logo {
+        max-width: 100%;
+        width: 20%;
+    }
+    
+    .header_navbar_menu {
+        display: flex;
+        list-style-type: none;
+        margin: 0 0 0 auto;
+    }
+    
+    .header_navbar_menu_item {
+        margin: 0 20px;
+        padding: 30px 20px;
+        border-top: 2px solid transparent;
+    }
+    
+    .header_navbar_menu_item[data-active=true] .header_navbar_menu_item_link {
+        color: var(--primary-color);
+    }
+    
+    .header_navbar_menu_item[data-active=true] {
+        border-top: 2px solid var(--primary-color);
+    }
+    
+    .header_navbar_menu_item_link {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    .header_search {
+        margin: 30px 0 0 0;
+    }
+    
+    .header_search_title {
+        margin: 0;
+    }
+    
+    .header_search_description {
+        margin: 10px 0 0 0;
+    }
+    
+    .header_search_form {
+        margin: 20px 0 0 0;
+    }
+    
+    .header_search_form_group {
+        display: flex;
+    }
+    
+    .header_search_form_group_input {
+        padding: 0 15px;
+        border-top: 1px solid var(--bg-color);
+        border-bottom: 1px solid var(--bg-color);
+        border-left: 1px solid var(--bg-color);
+        border-right: none;
+        white-space: unset;
+        outline: none;
+    }
+    
+    .header_search_form_group_icon {
+        background: var(--bg-color);
+        padding: 15px;
+        border-radius: 10px 0 0 10px;
+    }
+    
+    .header_search_form_group_input::placeholder {
+        font-weight: bold;
+        color: inherit;
+    }
+    
+    .header_search_form_group_button {
+        background: var(--primary-color);
+        border: none;
+        border-radius: 0 10px 10px 0;
+        color: #fff;
+        padding: 0 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .2s;
+    }
+    
+    .header_search_form_group_button:hover {
+        transition: .2s;
+        background: var(--primary-hover-color);
+    }
+    /* Main */
+    
+    .main {
+        margin: 0 auto;
+        width: 90%;
+    }
+    
+    .main_filters {
+        margin: 20px 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .main_filters_list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    .main_filters_list_title {
+        margin: 0 20px 0 0;
+    }
+    
+    .main_filters_list_filter {
+        border-radius: 20px;
+        border: 2px solid var(--bg-color);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        margin: 0 20px 0 0;
+        cursor: pointer;
+        padding: 5px 10px 5px 5px;
+        transition: .2s;
+    }
+    
+    .main_filters_list_filter:hover {
+        transform: scale(1.03);
+        transition: .2s;
+    }
+    
+    .main_filters_list_filter_icon {
+        background: #DEEBFF;
+        color: var(--primary-color);
+        border-radius: 100%;
+        padding: 15px;
+        margin: -7px 10px -7px -7px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .main_about {
+        margin: 20px 0 0 0;
+    }
+    
+    .main_about_icon {
+        border: 2px solid var(--bg-color);
+        border-radius: 100%;
+        padding: 5px 10px;
+        color: var(--primary-color);
+        margin: 0 5px 0 0;
+    }
+    
+    #housings {
+        gap: 30px;
+        margin: 30px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .housing .row {
+        gap: 30px;
+        display: flex;
+        margin: 30px 0;
+    }
+    
+    .housing {
+        background: var(--bg-color);
+        padding: 30px;
+        border-radius: 20px;
+    }
+    
+    .housing_title {
+        margin: 10px 0;
+    }
+    
+    .housing_card {
+        background: #fff;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 5px 5px 0 5px;
+        box-shadow: 5px 10px 15px rgba(0 0 0 / 10%);
+        transition: .2s;
+    }
+    
+    .housing_card:hover,
+    .housing_populars_card:hover {
+        transition: .2s;
+        transform: scale(1.02);
+    }
+    
+    .housing_card_image {
+        display: inline;
+        width: 300px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .housing_card_body {
+        padding: 10px 15px;
+    }
+    
+    .housing_card_body_name {
+        color: #000;
+        margin: 0;
+    }
+    
+    .housing_card_body_price {
+        color: #000;
+        margin: 10px 0 0 0;
+    }
+    
+    .housing_card_body_rating {
+        margin: 10px 0 0 0;
+    }
+    
+    .housing_card_body_rating_icon[data-active=true] {
+        color: var(--primary-color);
+    }
+    
+    .housing_card_body_rating_icon {
+        color: var(--bg-color);
+    }
+    
+    .housing_more {
+        text-decoration: none;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    .housing_populars {
+        background: var(--bg-color);
+        padding: 30px;
+        border-radius: 20px;
+    }
+    
+    .housing_populars_content {
+        margin: 30px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .housing_populars_title {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .housing_populars_card {
+        display: flex;
+        background: #fff;
+        border-radius: 20px;
+        padding: 5px;
+        text-decoration: none;
+        transition: .2s;
+        box-shadow: 5px 10px 15px rgba(0 0 0 / 10%);
+    }
+    
+    .housing_populars_card_image {
+        object-fit: cover;
+        width: 150px;
+        height: 165px;
+        border-radius: 20px 0 0 20px;
+    }
+    
+    .housing_populars_card_body {
+        padding: 0 20px;
+        position: relative;
+    }
+    
+    .housing_populars_card_body_name {
+        color: #000;
+        margin: 10px 0 0 0;
+    }
+    
+    .housing_populars_card_body_description {
+        color: #000;
+    }
+    
+    .housing_populars_card_body_rating {
+        position: absolute;
+        bottom: 10px;
+    }
+    /* Activities */
+    
+    #activities {
+        margin: 60px 0;
+    }
+    
+    .activities_content {
+        display: flex;
+        gap: 40px;
+        margin: 30px 0 0 0;
+    }
+    
+    .activities_card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 5px 10px 15px rgba(0 0 0 / 10%);
+    }
+    
+    .activities_card_full_sized {
+        height: 100%;
+    }
+    
+    .activities_card_body {
+        padding: 0 20px;
+        display: flex;
+        background: #fff;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .activities_card_image {
+        border-radius: 20px 20px 0 0;
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    
+    .activities_card_full_sized .activities_card_image {
+        height: 93.55%;
+    }
+    
+    .activities_column_items {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    /* Footer */
+    
+    .footer {
+        background: var(--bg-color);
+    }
+    
+    .footer_content {
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+    
+    .footer_section {
+        width: 30%;
+    }
+    
+    .footer_section_menu {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .footer_section_menu_item {
+        margin: 10px 0 0 0;
+    }
+    
+    .footer_section_menu_item_link {
+        text-decoration: none;
+        color: #000;
+    }
